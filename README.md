@@ -1,5 +1,5 @@
 # GROUP-16
-Morphological-Based Object Counting in Binary Images
+`This Project is about Morphological-Based Object Counting in Binary Images`
 # Morphological-Based Object Counting in Binary Images
 
 ## Project Overview
@@ -24,16 +24,16 @@ We obtain it via thresholding:
 
 A grayscale image is converted into a **binary image** using thresholding:
 
-\[
+$$
 B(x,y) =
 \begin{cases}
-255, & I(x,y) \ge T \\
-0, & I(x,y) < T
+255, & \text{if } I(x,y) \ge T \\
+0, & \text{if } I(x,y) < T
 \end{cases}
-\]
+$$
 
 where:
-- \(I(x,y)\) is the grayscale intensity
+- \(I(x,y) \) is the grayscale intensity
 - \(T\) is the threshold value
 
 In this project, **Otsu’s method** is used to automatically determine an optimal threshold.
@@ -42,22 +42,26 @@ In this project, **Otsu’s method** is used to automatically determine an optim
 
 Morphological operations analyze object shapes using a **structuring element**.
 
-- **Erosion (\(A \ominus B\))**  
+- **Erosion ($A \ominus B$)**  
   Removes boundary pixels and small noise.
 
-- **Dilation (\(A \oplus B\))**  
+- **Dilation ($A \oplus B$)**  
   Expands object boundaries and fills gaps.
 
-- **Opening**  
-  \[
+- **Opening**
+
+  $$
   A \circ B = (A \ominus B) \oplus B
-  \]  
+  $$
+
   Removes small objects and noise.
 
-- **Closing**  
-  \[
+- **Closing**
+
+  $$
   A \bullet B = (A \oplus B) \ominus B
-  \]  
+  $$
+
   Fills small holes within objects.
 
 ---
@@ -106,7 +110,7 @@ Fills small holes and gaps.
 - OpenCV  
 - NumPy  
 - Matplotlib  
-- Jupyter Notebook  
+- Jupyter Notebook(In Anaconda Environment)  
 
 
 ### 3.2 Methodology
@@ -136,14 +140,12 @@ The code is **modular, well-commented, and structured** for clarity.
   - Connected component result and count
   - Watershed segmentation result and count
 - Comparisons between **Connected Components** and **Watershed** results are included.
-- Execution time is measured:
-  - Per image
-  - Per algorithm
-  - Total runtime
 
 
 ## 5. Discussion
 Morphological operations significantly improve counting accuracy by removing noise and separating objects. However, challenges arise when objects overlap or have low contrast with the background.
+
+
 ### 5.1 Analysis of Results
 
 - Connected Component Analysis performs well when objects are clearly separated.
@@ -181,7 +183,6 @@ Morphological operations significantly improve counting accuracy by removing noi
   - Results
   - Discussion
   - Conclusion
-- All project files are maintained in a GitHub repository.
 
 
 ## 7. Conclusion
@@ -195,9 +196,11 @@ By combining thresholding, morphological operations, and segmentation, reliable 
 - Agricultural produce counting
 - Traffic and parking analysis
 - Automated inspection systems
+- Cell Counting in biological specimen
 
 ## 9. Image Sources
-All images used in this project were obtained from publicly available and royalty-free sources from pexels.com and are used strictly for academic purposes.
+`DISCLAIMER:`All images used in this project were obtained from publicly available and royalty-free sources from pexels.com and unsplash and are used strictly for academic purposes.
+
 
 ## 10. Contributors
 #### 1.**Aggrey Paintsil Ishmeal** - **11125864**  (Group Leader)
